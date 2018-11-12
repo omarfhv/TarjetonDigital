@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:yourapp="http://schemas.android.com/apk/res-auto">
+    <!-- Search, should appear as action button -->
+
+
+    <item
+        android:id="@+id/consulta"
+        android:icon="@drawable/consulta"
+        android:title="Volver a cargar"
+        yourapp:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/agenda"
+        android:icon="@drawable/agendaas"
+        android:title="Instrucciones"
+        yourapp:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/diagnostico"
+        android:icon="@drawable/diagno"
+        android:title="Instrucciones"
+        yourapp:showAsAction="ifRoom" />
+</menu>

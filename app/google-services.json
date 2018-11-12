@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "572408788367",
+    "firebase_url": "https://tarjetondigital-f8664.firebaseio.com",
+    "project_id": "tarjetondigital-f8664",
+    "storage_bucket": "tarjetondigital-f8664.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572408788367:android:b330cf4e6acc49df",
+        "android_client_info": {
+          "package_name": "com.tarjetonimss.user.imsswebtarjeton"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "572408788367-59na8c1hdiolkbm622tl67aitrp9jndj.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "572408788367-59na8c1hdiolkbm622tl67aitrp9jndj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1uZh_vsNnEOH-GaoIwO2VIr6G_6iW-qk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
