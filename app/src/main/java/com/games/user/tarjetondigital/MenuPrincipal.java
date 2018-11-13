@@ -323,7 +323,6 @@ public class MenuPrincipal extends AppCompatActivity {
     }
 
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -333,26 +332,38 @@ public class MenuPrincipal extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
+        Intent intentmenu = new Intent();
         switch (item.getItemId()) {
             case R.id.consulta:
-                //metodoAdd()
-                Intent intentae7 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.games.user.consultatarjetondigital"));
-                startActivity(intentae7);
+                verificarapp("com.games.user.consultatarjetondigital",
+                        this, "https://play.google.com/store/apps/details?id=com.games.user.consultatarjetondigital");
                 return true;
             case R.id.agenda:
-                //metodoSearch()
-                Intent intentae5= new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.games.user.agendaimss"));
-                startActivity(intentae5);
+                verificarapp("com.games.user.agendaimss", this,
+                        "https://play.google.com/store/apps/details?id=com.games.user.agendaimss");
                 return true;
             case R.id.diagnostico:
-                //metodoEdit()
-                Intent intentae6 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rh.imss.gob.mx/tarjetonjubilados/(S(lpvgwevvhy0ja2padtk4t12e))/default.aspx"));
-                startActivity(intentae6);
-                return true;
+                verificarapp("com.games.user.diagnostico", this,
+                        "https://play.google.com/store/apps/details?id=com.games.user.agendaimss");
 
+                return true;
             default:
+                startActivity(intentmenu);
                 return super.onOptionsItemSelected(item);
+        }
+
+    }
+
+    private void verificarapp(String nombrePaquete, Context context, String link) {
+        Intent intentmenu;
+        PackageManager pm = context.getPackageManager();
+        try {
+            pm.getPackageInfo(nombrePaquete, PackageManager.GET_ACTIVITIES);
+            intentmenu = getPackageManager().getLaunchIntentForPackage(nombrePaquete);
+            startActivity(intentmenu);
+        } catch (PackageManager.NameNotFoundException e) {
+            intentmenu = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+            startActivity(intentmenu);
         }
 
     }

@@ -6,18 +6,18 @@
     <item
         android:id="@+id/consulta"
         android:icon="@drawable/consulta"
-        android:title="Volver a cargar"
-        yourapp:showAsAction="ifRoom" />
+        android:title="Consulta Tarjeton"
+        yourapp:showAsAction="always" />
 
     <item
         android:id="@+id/agenda"
         android:icon="@drawable/agendaas"
-        android:title="Instrucciones"
-        yourapp:showAsAction="ifRoom" />
+        android:title="Agenda IMSS"
+        yourapp:showAsAction="always" />
 
     <item
         android:id="@+id/diagnostico"
         android:icon="@drawable/diagno"
-        android:title="Instrucciones"
-        yourapp:showAsAction="ifRoom" />
+        android:title="APP Diagnostico"
+        yourapp:showAsAction="always" />
 </menu>
