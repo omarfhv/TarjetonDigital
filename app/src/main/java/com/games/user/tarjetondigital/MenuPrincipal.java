@@ -8,6 +8,8 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -63,6 +65,17 @@ public class MenuPrincipal extends AppCompatActivity {
 
         SharedPreferences sharedPref;
         sharedPref = getSharedPreferences("inicio", Context.MODE_PRIVATE);
+        int califica = sharedPref.getInt("califica", 0);
+        if (califica == 20) {
+            dialogocalifica();
+            califica = 0;
+        } else
+            califica++;
+
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt("califica", califica);
+        editor.apply();
+
         if (!sharedPref.getBoolean("inicio", false)) {
             final android.support.v7.app.AlertDialog.Builder constructor = new android.support.v7.app.AlertDialog.Builder(this);
             View vista = getLayoutInflater().inflate(R.layout.alert_dialog_inicio, null);
@@ -98,6 +111,37 @@ public class MenuPrincipal extends AppCompatActivity {
         mInterstitialAd.setAdUnitId("ca-app-pub-1984616735532779/9679963023");
         AdRequest adRequest1 = new AdRequest.Builder().build();
         mInterstitialAd.loadAd(adRequest1);
+
+    }
+
+    private void dialogocalifica() {
+        ColorDrawable dialogColor = new ColorDrawable(Color.GRAY);
+        dialogColor.setAlpha(0);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(MenuPrincipal.this);
+        final LayoutInflater inflater = getLayoutInflater();
+        View vi = inflater.inflate(R.layout.dialogocalifica, null);
+        builder.setView(vi);
+        final AlertDialog dialog = builder.create();
+        dialog.setCancelable(true);
+        dialog.getWindow().setBackgroundDrawable(dialogColor);
+        Button botonsi = vi.findViewById(R.id.botonsi);
+        botonsi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentae4 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.tarjetonimss.user.imsswebtarjeton"));
+                startActivity(intentae4);
+            }
+        });
+        Button botonno = vi.findViewById(R.id.botonno);
+        botonno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dialog.cancel();
+            }
+        });
+
+        dialog.show();
 
     }
 
