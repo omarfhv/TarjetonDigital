@@ -3,6 +3,7 @@ package com.games.user.tarjetondigital;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -38,6 +39,18 @@ public class Promociones extends AppCompatActivity {
         myWebView.loadUrl("http://www.sntss.org.mx/promociones");
         myWebView.getSettings().setBuiltInZoomControls(true);
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+            startActivity(new Intent(getBaseContext(), MenuPrincipal.class)
+                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
+            finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -47,8 +60,6 @@ public class Promociones extends AppCompatActivity {
                     .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
             finish();
         }
-
-
         return super.onOptionsItemSelected(item);
     }
 }

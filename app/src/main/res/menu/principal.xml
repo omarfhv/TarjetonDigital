@@ -3,11 +3,6 @@
     <!-- Search, should appear as action button -->
 
 
-    <item
-        android:id="@+id/consulta"
-        android:icon="@drawable/consulta"
-        android:title="Consulta Tarjeton"
-        yourapp:showAsAction="always" />
 
     <item
         android:id="@+id/agenda"
@@ -17,7 +12,7 @@
 
     <item
         android:id="@+id/diagnostico"
-        android:icon="@drawable/diagno"
+        android:icon="@mipmap/logo"
         android:title="APP Diagnostico"
         yourapp:showAsAction="always" />
 </menu>

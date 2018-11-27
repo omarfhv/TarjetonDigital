@@ -66,6 +66,7 @@ public class MenuPrincipal extends AppCompatActivity {
         SharedPreferences sharedPref;
         sharedPref = getSharedPreferences("inicio", Context.MODE_PRIVATE);
         int califica = sharedPref.getInt("califica", 0);
+
         if (califica == 20) {
             dialogocalifica();
             califica = 0;
@@ -75,7 +76,29 @@ public class MenuPrincipal extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt("califica", califica);
         editor.apply();
+        if (!sharedPref.getBoolean("apps", false)) {
 
+            final android.support.v7.app.AlertDialog.Builder constructor = new android.support.v7.app.AlertDialog.Builder(this);
+            View vista = getLayoutInflater().inflate(R.layout.instruccionesapps, null);
+            constructor.setView(vista);
+            final android.support.v7.app.AlertDialog dialogo = constructor.create();
+            Button botonok = vista.findViewById(R.id.botonok);
+            final CheckBox chbx = vista.findViewById(R.id.chbxdialog);
+            botonok.setOnClickListener(new View.OnClickListener() {
+                                           @Override
+                                           public void onClick(View v) {
+                                               SharedPreferences sharedPref;
+                                               sharedPref = getSharedPreferences(
+                                                       "inicio", Context.MODE_PRIVATE);
+                                               SharedPreferences.Editor editor = sharedPref.edit();
+                                               editor.putBoolean("apps", chbx.isChecked());
+                                               editor.commit();
+                                               dialogo.cancel();
+                                           }
+                                       }
+            );
+            dialogo.show();
+        }
         if (!sharedPref.getBoolean("inicio", false)) {
             final android.support.v7.app.AlertDialog.Builder constructor = new android.support.v7.app.AlertDialog.Builder(this);
             View vista = getLayoutInflater().inflate(R.layout.alert_dialog_inicio, null);
@@ -149,11 +172,13 @@ public class MenuPrincipal extends AppCompatActivity {
 
         Intent intent11 = new Intent(this, Calendario.class);
         startActivity(intent11);
+        finish();
     }
 
     public void activos(View view) {
         Intent intent1 = new Intent(this, SubMenuActivos.class);
         startActivity(intent1);
+        finish();
         // Intent intent1 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rh.imss.gob.mx/tarjetondigital/"));
         // startActivity(intent1);
     }
@@ -161,6 +186,7 @@ public class MenuPrincipal extends AppCompatActivity {
     public void jubilados(View view) {
         Intent intentae4 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rh.imss.gob.mx/tarjetonjubilados/(S(lpvgwevvhy0ja2padtk4t12e))/default.aspx"));
         startActivity(intentae4);
+        finish();
     }
 
     public void Compartir(View view) {
@@ -218,6 +244,7 @@ public class MenuPrincipal extends AppCompatActivity {
     public void documentos(View view) {
         Intent intent121 = new Intent(this, Documentos.class);
         startActivity(intent121);
+        finish();
 
     }
 
@@ -225,6 +252,7 @@ public class MenuPrincipal extends AppCompatActivity {
 
         Intent intent08 = new Intent(this, Noticias.class);
         startActivity(intent08);
+        finish();
     }
 
     public void Ver(View view) {
@@ -244,6 +272,7 @@ public class MenuPrincipal extends AppCompatActivity {
 
         Intent intent11111 = new Intent(this, MainActivity.class);
         startActivity(intent11111);
+        finish();
 
 
     }
@@ -252,6 +281,7 @@ public class MenuPrincipal extends AppCompatActivity {
 
         Intent intent1281 = new Intent(this, Promociones.class);
         startActivity(intent1281);
+        finish();
     }
 
     @Override
@@ -334,17 +364,13 @@ public class MenuPrincipal extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intentmenu = new Intent();
         switch (item.getItemId()) {
-            case R.id.consulta:
-                verificarapp("com.games.user.consultatarjetondigital",
-                        this, "https://play.google.com/store/apps/details?id=com.games.user.consultatarjetondigital");
-                return true;
             case R.id.agenda:
                 verificarapp("com.games.user.agendaimss", this,
                         "https://play.google.com/store/apps/details?id=com.games.user.agendaimss");
                 return true;
             case R.id.diagnostico:
-                verificarapp("com.games.user.diagnostico", this,
-                        "https://play.google.com/store/apps/details?id=com.games.user.agendaimss");
+                verificarapp("com.games.user.imsstickers", this,
+                        "https://play.google.com/store/apps/details?id=com.games.user.imsstickers");
 
                 return true;
             default:
