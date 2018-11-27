@@ -12,7 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Ingresa de forma rapida a la app de Agenda IMSS con la que podras hacer tus registros de pases permisos etc "
+        android:text="Ingresa de forma rapida a la app de AGENDA IMSS con la que podras hacer tus registros de pases, txt, licencia y otros documentos del IMSS.
+Con la aplicacion de STICKERS IMSS podras personalizar tu Whatsapp con los mejores stickers del Instituto"
         android:textAlignment="center"
         android:textColor="#ffffff"
         android:textSize="20dp" />

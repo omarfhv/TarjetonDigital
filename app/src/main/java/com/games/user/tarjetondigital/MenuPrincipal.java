@@ -186,7 +186,6 @@ public class MenuPrincipal extends AppCompatActivity {
     public void jubilados(View view) {
         Intent intentae4 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rh.imss.gob.mx/tarjetonjubilados/(S(lpvgwevvhy0ja2padtk4t12e))/default.aspx"));
         startActivity(intentae4);
-        finish();
     }
 
     public void Compartir(View view) {
