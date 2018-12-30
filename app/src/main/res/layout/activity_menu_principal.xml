@@ -115,6 +115,20 @@
                     android:textSize="30sp"
                     android:typeface="monospace" />
 
+
+                <Button
+                    android:id="@+id/vacaciones"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/botonprincipal"
+                    android:onClick="vacaciones"
+                    android:text="ROL Vacacional"
+                    android:textColor="#ffffff"
+                    android:textSize="30sp"
+                    android:typeface="monospace" />
+
+
                 <Button
                     android:id="@+id/ver"
                     android:layout_width="match_parent"

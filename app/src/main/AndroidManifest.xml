@@ -7,6 +7,10 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <meta-data
+        android:name="com.google.android.gms.ads.APPLICATION_ID"
+        android:value="ca-app-pub-1984616735532779~9062514760" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/tarjeton"
@@ -68,11 +72,8 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".SubMenuActivos"></activity>
+        <activity android:name=".SubMenuActivos" />
+        <activity android:name=".Rol_Vacacional"></activity>
     </application>
-
-    <meta-data
-        android:name="com.google.android.gms.ads.APPLICATION_ID"
-        android:value="ca-app-pub-1984616735532779~9062514760"/>
 
 </manifest>

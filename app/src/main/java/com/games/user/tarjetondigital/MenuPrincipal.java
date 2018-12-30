@@ -188,6 +188,14 @@ public class MenuPrincipal extends AppCompatActivity {
         startActivity(intentae4);
     }
 
+    public void vacaciones(View view) {
+        Intent intent13 = new Intent(this, Rol_Vacacional.class);
+        startActivity(intent13);
+        finish();
+        // Intent intent1 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://rh.imss.gob.mx/tarjetondigital/"));
+        // startActivity(intent1);
+    }
+
     public void Compartir(View view) {
 
         if (ContextCompat.checkSelfPermission(MenuPrincipal.this,
