@@ -165,7 +165,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-1984616735532779/7600594596" />
+        ads:adUnitId="ca-app-pub-4328657074085399/5042456893" />
 
     <ImageView
         android:id="@+id/imagevi"

@@ -53,7 +53,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-1984616735532779/7600594596"
+        ads:adUnitId="ca-app-pub-4328657074085399/5042456893"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton3" />

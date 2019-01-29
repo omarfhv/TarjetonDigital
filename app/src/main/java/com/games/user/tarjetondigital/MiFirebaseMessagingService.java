@@ -56,7 +56,7 @@ public class MiFirebaseMessagingService extends FirebaseMessagingService {
                 .setAutoCancel ( true )
                 .setSound (soundUri)
                 .setContentIntent (pendingIntent);
-        notificationBuilder.setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.tarjeton));
+        notificationBuilder.setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.tarjeton1));
 
         NotificationManager notificationManager = ( NotificationManager ) getSystemService ( Context. NOTIFICATION_SERVICE );
         notificationManager . notify ( 0 , notificationBuilder . build ());
